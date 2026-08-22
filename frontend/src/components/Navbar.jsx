@@ -4,7 +4,6 @@ import {
   Search,
   Sun,
   Moon,
-  ShieldCheck,
 } from "lucide-react";
 
 import { useAuth } from "../context/AuthContext";
@@ -19,17 +18,18 @@ export default function Navbar({
   return (
     <header className="h-[78px] bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-6 lg:px-8 sticky top-0 z-30">
 
-      {/* Left */}
+      {/* LEFT SECTION */}
       <div className="flex items-center gap-4">
 
+        {/* MOBILE MENU BUTTON */}
         <button
           onClick={onMenuClick}
-          className="lg:hidden w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center hover:bg-slate-50"
+          className="lg:hidden w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition"
         >
           <Menu size={20} />
         </button>
 
-        {/* Search */}
+        {/* SEARCH */}
         <div className="hidden md:flex items-center gap-3 w-[300px] lg:w-[380px] px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200">
 
           <Search
@@ -51,29 +51,15 @@ export default function Navbar({
 
       </div>
 
-      {/* Right */}
+
+      {/* RIGHT SECTION */}
       <div className="flex items-center gap-2 sm:gap-4">
 
-        {/* Privacy status */}
-        <div className="hidden md:flex items-center gap-2 px-3 py-2 rounded-xl bg-emerald-50 border border-emerald-100">
-
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-
-          <ShieldCheck
-            size={15}
-            className="text-emerald-600"
-          />
-
-          <span className="text-xs font-semibold text-emerald-700">
-            Privacy Active
-          </span>
-
-        </div>
-
-        {/* Theme */}
+        {/* THEME TOGGLE */}
         <button
           onClick={onToggleTheme}
           className="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-slate-50 transition"
+          title="Toggle theme"
         >
           {darkMode ? (
             <Sun size={18} />
@@ -82,16 +68,20 @@ export default function Navbar({
           )}
         </button>
 
-        {/* Notifications */}
-        <button className="relative w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-slate-50 transition">
 
+        {/* NOTIFICATIONS */}
+        <button
+          className="relative w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-slate-50 transition"
+          title="Notifications"
+        >
           <Bell size={18} />
 
           <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-cyan-500 border-2 border-white" />
 
         </button>
 
-        {/* User */}
+
+        {/* USER PROFILE */}
         <div className="flex items-center gap-3 pl-2 sm:pl-3 sm:border-l border-slate-200">
 
           <div className="hidden sm:block text-right">
@@ -106,10 +96,14 @@ export default function Navbar({
 
           </div>
 
+
+          {/* USER AVATAR */}
           <div className="w-10 h-10 rounded-xl bg-slate-950 text-white flex items-center justify-center font-semibold text-sm">
+
             {(user?.name || "R")
               .charAt(0)
               .toUpperCase()}
+
           </div>
 
         </div>

@@ -13,8 +13,7 @@ import Register from "./pages/Register";
 import Prediction from "./pages/Prediction";
 import Models from "./pages/Models";
 import Explainability from "./pages/Explainability";
-import FederatedLearning from "./pages/FederatedLearning";
-import Privacy from "./pages/Privacy";
+
 import History from "./pages/History";
 import About from "./pages/About";
 import Settings from "./pages/Settings";
@@ -91,23 +90,7 @@ export default function App() {
   }
 />
 
-<Route
-  path="/federated-learning"
-  element={
-    <ProtectedRoute>
-      <FederatedLearning />
-    </ProtectedRoute>
-  }
-/>
 
-<Route
-  path="/privacy"
-  element={
-    <ProtectedRoute>
-      <Privacy />
-    </ProtectedRoute>
-  }
-/>
 
 <Route
   path="/history"

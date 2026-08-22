@@ -98,19 +98,19 @@ export default function Prediction() {
       // ----------------------------------------------------------
 
       const response = await fetch(
-        "http://127.0.0.1:8000/predict",
-        {
-          method: "POST",
+  "https://cardiosecure-api.onrender.com/predict",
+  {
+    method: "POST",
 
-          headers: {
-            "Content-Type": "application/json",
-          },
+    headers: {
+      "Content-Type": "application/json",
+    },
 
-          body: JSON.stringify({
-            features: features,
-          }),
-        }
-      );
+    body: JSON.stringify({
+      features: features,
+    }),
+  }
+);
 
       // ----------------------------------------------------------
       // GET RESPONSE
